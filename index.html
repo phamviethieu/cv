@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <meta charset="UTF-8"/>
+        <title>CV Pham Viet Hieu Front-End Intern</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="css/all.min.css"/>
+        <link rel="stylesheet" href="css/style.css"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+        <script src="https://kit.fontawesome.com/aa316daba8.js"></script>
+        <script>
+            
+            $(window).on("load",function(){
+                $('body').removeClass('preloading');
+                $('.load').delay(50).fadeOut();
+            })
+        </script>
+    </head>
+    <body class="preloading">
+
+        <!-- <div class="load">
+            <img src="img/load.gif">
+        </div> -->
+
+        <header>
+            <h1 id = "top">
+                   <span style="color: #14a6be"> CV</span> PHAM VIET HIEU 
+            </h1>
+            <nav>
+                <ul>
+                    <li><a href="#top">Home</a></li>
+                    <li><a href="#About">About</a></li>
+                    <li><a href="#Skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="wrapper">
+            <div class = "part About" id ="About">
+                <h3>ABOUT ME</h3>
+                <div id="introduce">
+                
+                    <p>Hi, I'm Hieu ! I'm study in Hanoi Open University. With 3 years study at here . I realize that i don't like my major. So I'm learning programing to have opportune to join the software companies. I hope that I will become to a partner of you company. </p>
+                    <p>Thank you for reading my CV!</p>
+                </div>
+                <button id="showInfo">Show Info</button> <button id="more">More</button>
+            </div>
+            <div class = "part Skills group" id="Skills" >
+                <br>
+                <h3 align="center"> Skills </h3>
+                <br>
+                <div id = "col-1">
+                    <img src = "img/3.png" width ="300px" height = "300px">
+                    <h4>Technical:</h4>
+                </div>
+                <div id = "col-2">
+                    <img src = "img/3.jpg" width = "300px">
+                    <h4>Soft-skills:</h4>
+                     <p>I have knowleage about PHP and MySQL at basic level. Used to make a exam by them.</p>
+                </div>
+                 <div id = "col-3">
+                    <img src = "img/2.jpg" width = "300px">
+                    <h4>Soft-skills:</h4>
+                     <p>A progressive people, like to learn , so I can work together with another people , and work alone</p>
+                </div>
+            </div>
+            <div class = "part projects" id="projects">
+                <h3>My Projects</h3>
+                
+                    <div class = "box">
+                        <img src="img/p1.png">
+                        
+                    </div>
+                    <div class="box">
+                        <img src="img/p5.png">
+                    </div>
+                    <div class="box">
+                        <img src="img/p3.png">
+                    </div>
+                    <div class="box">
+                        <img src="img/p4.png">
+                    </div>
+                    <div class="box">
+                         <img src="img/p2.png">
+                    </div>
+                
+                
+                    
+                    
+                   
+            </div>
+			 <div class = "part contact" id="contact">
+                  <div class="contact-contain">
+                      <i class="fab fa-facebook-f"></i>
+                      <i class="far fa-envelope"></i>
+                      <i class="fas fa-phone-alt"></i>
+                  </div>
+            </div>
+			
+      
+        </div>
+             <div class="item-modal">
+                <div class="modal-content"> 
+                    <div class="close-modal">x</div>
+                    <header>Dialog box</header>
+                    
+                    <footer>PhamVietHieu 2019</footer>
+                </div> 
+            </div>
+
+        <footer>
+            <p>Live to code </p>
+            <a href=""> Back to top </a>
+        </footer>
+	  <script type="text/javascript">
+            $(document).ready(function($) {
+                 
+                
+                $('#showInfo').click(function(event) {
+                    /* Act on the event */
+                    console.log('done');
+                    $("#introduce").slideToggle('slow');                  
+                    
+                });
+                $('#more').click(function(event){
+                    console.log('more');
+                    $('.item-modal').fadeIn('fast');
+                })
+                $('.close-modal').click(function(){
+                    $('.item-modal').fadeOut('slow');
+                })
+                 // pos = $("top").offset().top;
+                $("footer a").click(function(event){
+                    $("html, body").animate({scrollTop:0},400);
+                })
+                $("nav a").click(function(event) {
+                   event.preventDefault();
+                   part = $(this).attr("href");
+                   console.log(part);
+                   position = $(part).offset().top;
+                   $("html, body").animate({scrollTop:position},400);
+
+                });
+                $(".slider img:gt(0)").hide();
+               /* setInterval(function(){
+                    $(".slider:first-child").fadeOut().next()("img").fadeIn().end().appendTo(".slider");
+                },200);*/
+                 $('.flexslider').flexslider({
+                    animation: "slide"
+                  });
+
+            });
+        </script>
+
+    </body>
+</html>
+
+
